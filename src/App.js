@@ -1,12 +1,12 @@
 import React from "react";
 
-import Restaurant from "./Pages/Restaurant";
+import Users from "./Pages/Users";
 
 const App = () => {
 
   return (
     <>
-      <Restaurant />
+      <Users />
     </>
   );
 }
