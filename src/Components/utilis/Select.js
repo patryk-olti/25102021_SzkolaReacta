@@ -1,6 +1,6 @@
 import React from "react";
 
-const Select = ({ tips, handleInput }) => {
+const Select = ({ tips, handleInput, value }) => {
 
     const tipsArray = tips.map(item => (
         <option key={item} value={item}>{item}%</option>
@@ -11,7 +11,7 @@ const Select = ({ tips, handleInput }) => {
     }
 
     return(
-        <select onChange={onChange} >
+        <select onChange={onChange} value={value} >
             {tipsArray}
         </select>
     )

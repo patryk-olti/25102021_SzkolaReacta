@@ -21,8 +21,8 @@ const RestaurantForm = ({ handleSubmit }) => {
 
     return(
         <Form>
-            <Input type="number" placeholder="netto" handleInput={setNetto} />
-            <Select tips={tips} handleInput={setTip} />
+            <Input type="number" placeholder="netto" handleInput={setNetto} value={netto} />
+            <Select tips={tips} handleInput={setTip} value={tip} />
             <Button name="Przelicz" measurePrice={measurePrice} />
         </Form>
     )
