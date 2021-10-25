@@ -1,13 +1,17 @@
 import React from "react";
 
-const Select = ({ tips }) => {
+const Select = ({ tips, handleInput }) => {
 
     const tipsArray = tips.map(item => (
-        <option value={item}>{item}%</option>
+        <option key={item} value={item}>{item}%</option>
     ))
 
+    const onChange = (e) => {
+        handleInput(e.target.value);
+    }
+
     return(
-        <select>
+        <select onChange={onChange} >
             {tipsArray}
         </select>
     )

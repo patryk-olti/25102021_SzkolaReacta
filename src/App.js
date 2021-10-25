@@ -1,10 +1,13 @@
-import RestaurantForm from "./Pages/RestaurantForm";
+import React from "react";
 
-function App() {
+import Restaurant from "./Pages/Restaurant";
+
+const App = () => {
+
   return (
-    <div className="App">
-        <RestaurantForm />
-    </div>
+    <>
+      <Restaurant />
+    </>
   );
 }
 

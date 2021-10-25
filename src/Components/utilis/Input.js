@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ type, placeholder }) => {
+const Input = ({ type, placeholder, handleInput }) => {
 
     const styles = {
         border: '1px solid black',
@@ -9,11 +9,16 @@ const Input = ({ type, placeholder }) => {
         textAlign: 'center'
     }
 
+    const onChange = (e) => {
+        handleInput(e.target.value)
+    }
+
     return(
         <input 
             style={styles}
             type={type}
             placeholder={placeholder}
+            onChange={onChange}
         />
     )
 }
