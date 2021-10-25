@@ -5,7 +5,8 @@ const Input = ({ type, placeholder }) => {
     const styles = {
         border: '1px solid black',
         fontSize: '20px',
-        padding: '5px'
+        padding: '5px',
+        textAlign: 'center'
     }
 
     return(
