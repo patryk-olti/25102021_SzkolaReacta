@@ -1,6 +1,6 @@
 import React from "react";
 
-const RadioDiv = ({ children }) => {
+const Div = ({ children }) => {
 
     return(
         <div>
@@ -9,4 +9,4 @@ const RadioDiv = ({ children }) => {
     )
 }
 
-export default RadioDiv;
+export default Div;
