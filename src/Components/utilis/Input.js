@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ type, placeholder, handleInput, value }) => {
+const Input = ({ type, name, placeholder, handleInput, value, text }) => {
 
     const styles = {
         border: '1px solid black',
@@ -10,17 +10,28 @@ const Input = ({ type, placeholder, handleInput, value }) => {
     }
 
     const onChange = (e) => {
-        handleInput(e.target.value)
+        if(type=="radio"){
+            return handleInput(value);
+        }
+
+        if(handleInput !== undefined){
+            return handleInput(e.target.value);
+        }
     }
 
     return(
-        <input 
-            style={styles}
-            type={type}
-            placeholder={placeholder}
-            onChange={onChange}
-            value={value}
-        />
+        <label>
+            <input 
+                style={styles}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                onChange={onChange}
+                value={value}
+            />
+            {text}
+        </label>
+
     )
 }
 
