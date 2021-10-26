@@ -4,6 +4,7 @@ import Form from "../../Components/utilis/Form";
 import Input from "../../Components/utilis/Input";
 import RadioDiv from "../../Components/utilis/RadioDiv";
 import TextArea from "../../Components/utilis/TextArea";
+import Button from "../../Components/utilis/Button";
 
 const UsersForm = () => {
 
@@ -11,6 +12,13 @@ const UsersForm = () => {
     const [email, setEmail] = useState("");
     const [bio, setBio] = useState("");
     const [sex, setSex] = useState("")
+
+    const resetValues = () => {
+        setName("");
+        setEmail("");
+        setBio("");
+        setSex("");
+    }
 
     return(
         <Form>
@@ -21,6 +29,7 @@ const UsersForm = () => {
                 <Input type="radio" name="sex" handleInput={setSex} value="men" text="Men" />
                 <Input type="radio" name="sex" handleInput={setSex} value="female" text="Female" />
             </RadioDiv>
+            <Button name="przelicz" handleOnClick={resetValues} />
             {console.log(name, email, bio, sex)}
         </Form>
     )

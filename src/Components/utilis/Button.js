@@ -1,10 +1,10 @@
 import React from "react";
 
-const Button = ({ name, measurePrice }) => {
+const Button = ({ name, handleOnClick }) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        measurePrice();
+        handleOnClick();
     }
     return(
         <button onClick={handleClick}> {name} </button>
