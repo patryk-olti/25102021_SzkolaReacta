@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 import Form from "../../Components/utilis/Form";
-import Input from "../../Components/utilis/Input";
 import RadioDiv from "../../Components/utilis/RadioDiv";
 import TextArea from "../../Components/utilis/TextArea";
 import Button from "../../Components/utilis/Button";
+import TextInput from "../../Components/utilis/TextInput";
+import RadioInput from "../../Components/utilis/RadioInput";
 
 const UsersForm = () => {
 
@@ -22,12 +23,12 @@ const UsersForm = () => {
 
     return(
         <Form>
-            <Input type="text" placeholder="name"  handleInput={setName} value={name} />
-            <Input type="email" placeholder="email" handleInput={setEmail} value={email} />
+            <TextInput name="name" placeholder="name"  handleInput={setName} value={name}/>
+            <TextInput name="email" placeholder="name"  handleInput={setEmail} value={email}/>
             <TextArea type="email" placeholder="bio" handleInput={setBio} value={bio} />
             <RadioDiv>
-                <Input type="radio" name="sex" handleInput={setSex} value="men" text="Men" />
-                <Input type="radio" name="sex" handleInput={setSex} value="female" text="Female" />
+                <RadioInput name="sex" handleInput={setSex} value="female" text="Female" stateValue={sex} />
+                <RadioInput name="sex" handleInput={setSex} value="men" text="Men" stateValue={sex} />
             </RadioDiv>
             <Button name="przelicz" handleOnClick={resetValues} />
             {console.log(name, email, bio, sex)}
