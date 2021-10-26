@@ -8,7 +8,7 @@ import TextInput from "../../Components/utilis/TextInput";
 import RadioInput from "../../Components/utilis/RadioInput";
 import CheckBox from "../../Components/utilis/CheckBox";
 
-const UsersForm = () => {
+const UsersForm = ({ handleClick }) => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -19,11 +19,18 @@ const UsersForm = () => {
     const toggleAccept = () => setAccept( prev => !prev );
 
     const resetValues = () => {
+        if(name.length === 0){  console.log("error name")  };
+        if(email.length === 0){  console.log("error email") };
+        if(bio.length === 0){  console.log("error bio") };
+        if(sex.length === 0){  console.log("error sex") };
+        if(!accept){  console.log("error accept") };
+
         setName("");
         setEmail("");
         setBio("");
         setSex("");
         setAccept(false);
+        handleClick(true);
     }
 
     return(
@@ -37,7 +44,6 @@ const UsersForm = () => {
             </Div>
             <CheckBox handleInput={toggleAccept} text="accept" stateValue={accept} />
             <Button name="przelicz" handleOnClick={resetValues} />
-            {console.log(name, email, bio, sex)}
         </Form>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Form from "../../Components/utilis/Form";
-import Input from "../../Components/utilis/Input";
+import TextInput from "../../Components/utilis/TextInput";
 import Select from "../../Components/utilis/Select";
 import Button from "../../Components/utilis/Button";
 
@@ -21,9 +21,9 @@ const RestaurantForm = ({ handleSubmit }) => {
 
     return(
         <Form>
-            <Input type="number" placeholder="netto" handleInput={setNetto} value={netto} />
+            <TextInput placeholder="netto" handleInput={setNetto} value={netto} />
             <Select tips={tips} handleInput={setTip} value={tip} />
-            <Button name="Przelicz" measurePrice={measurePrice} />
+            <Button name="Przelicz" handleOnClick={measurePrice} />
         </Form>
     )
 }

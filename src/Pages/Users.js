@@ -2,11 +2,11 @@ import React from "react";
 
 import UsersForm from "../Containers/utilis/UsersForm";
 
-const Users = () => {
+const Users = ({ setLogged }) => {
 
     return(
         <div>
-            <UsersForm />
+            <UsersForm handleClick={setLogged} />
         </div>
     )
 }
